@@ -1,625 +1,865 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <title>CyberCraft | المنصة التونسية للأمن السيبراني</title>
-  <link rel="icon" href="هاكر.jpg" type="image/png">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="منصة تعليمية تونسية متخصصة في الأمن السيبراني وتقنيات الحماية الرقمية">
-  <meta name="keywords" content="أمن سيبراني, حماية رقمية, تونس, تعليم, اختبار اختراق">
-  <meta property="og:title" content="CyberCraft | المنصة التونسية للأمن السيبراني">
-  <meta property="og:description" content="تعلم أساليب الحماية الرقمية في بيئة آمنة ومحكمة">
-  <meta property="og:type" content="website">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-QC4X8624Q7"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خدمات تفريغ الدروس والبحوث | تحويل الكتابة اليدوية إلى ملفات رقمية</title>
+    <meta name="description" content="خدمة احترافية لتفريغ الدروس، الفروض والبحوث من الكتابة اليدوية إلى ملفات Word وPDF منظمة وجاهزة للطباعة">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📝</text></svg>">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Variables CSS */
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #27ae60;
+        }
 
-  gtag('config', 'G-QC4X8624Q7');
-</script>
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1370852209376013"
-     crossorigin="anonymous"></script>
-  <style>
-    :root {
-      --primary: #00ffff;
-      --primary-dark: #009999;
-      --dark: #0a0a0a;
-      --darker: #111;
-      --light: #f5f5f5;
-      --gray: #aaaaaa;
-      --warning: #ff9900;
-      --danger: #ff3333;
-    }
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            color: var(--dark);
+            line-height: 1.8;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 25px;
+        }
+
+        .nav-links a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+
+        /* Hero Section */
+        #hero {
+            padding: 150px 0 80px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+            margin-right: 15px;
+        }
+
+        .btn-outline:hover {
+            background: var(--secondary);
+            color: white;
+        }
+
+        /* Services Section */
+        #services {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background-color: var(--secondary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            padding: 30px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        /* How It Works */
+        #how-it-works {
+            padding: 80px 0;
+            background-color: #f5f7fa;
+        }
+
+        .steps {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+
+        .step {
+            flex: 0 0 calc(33.333% - 30px);
+            text-align: center;
+            padding: 30px;
+            position: relative;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background-color: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+
+        .step h3 {
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        /* Pricing */
+        #pricing {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .pricing-cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .pricing-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            padding: 40px 30px;
+            width: 300px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .pricing-card.featured {
+            border: 2px solid var(--secondary);
+            position: relative;
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background-color: var(--secondary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin: 20px 0;
+        }
+
+        .price span {
+            font-size: 1rem;
+            color: #777;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .pricing-features li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        /* Contact */
+        #contact {
+            padding: 80px 0;
+            background-color: #f5f7fa;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+            margin-top: 50px;
+        }
+
+        .contact-info {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .contact-card {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+
+        .contact-icon {
+            font-size: 1.2rem;
+            color: var(--secondary);
+            margin-left: 15px;
+            margin-top: 5px;
+        }
+
+        .contact-text h3 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: var(--primary);
+        }
+
+        .contact-form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--primary);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--secondary);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 50px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .footer-logo span {
+            color: var(--secondary);
+        }
+
+        .footer-about p {
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+
+        .footer-links h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-links h3::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background-color: var(--secondary);
+            bottom: 0;
+            right: 0;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+
+        .social-links {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            color: white;
+            border-radius: 50%;
+            margin-left: 10px;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .steps {
+                flex-direction: column;
+            }
+            
+            .step {
+                flex: 0 0 100%;
+                margin-bottom: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+            
+            .nav-links {
+                margin-top: 20px;
+            }
+            
+            .nav-links li {
+                margin: 0 10px;
+            }
+            
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .pricing-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+            }
+            
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+            
+            .btn {
+                display: block;
+                width: 100%;
+                margin-bottom: 15px;
+            }
+            
+            .btn-outline {
+                margin-right: 0;
+            }
+        }
+    </style>
     
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    
-    body {
-      margin: 0;
-      font-family: 'Tajawal', sans-serif;
-      background-color: var(--dark);
-      color: var(--light);
-      line-height: 1.8;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-    
-    header {
-      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-      color: #000;
-      padding: 4rem 1rem;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-      clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
-    }
-    
-    header h1 {
-      margin: 0;
-      font-size: clamp(2.2rem, 6vw, 4rem);
-      font-weight: 700;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-    }
-    
-    header p {
-      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-      margin-top: 1rem;
-      font-weight: 500;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    
-    nav {
-      background-color: var(--darker);
-      padding: 1rem;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    }
-    
-    nav button {
-      background-color: var(--primary);
-      color: #000;
-      border: none;
-      padding: 0.8rem 1.5rem;
-      font-size: 1rem;
-      font-family: inherit;
-      font-weight: 700;
-      border-radius: 2rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    }
-    
-    nav button:hover, nav button.active {
-      background-color: var(--primary-dark);
-      color: var(--light);
-      transform: translateY(-3px);
-      box-shadow: 0 5px 12px rgba(0,0,0,0.3);
-    }
-    
-    main {
-      padding: 2rem 1rem;
-      max-width: 1200px;
-      margin: 0 auto;
-      width: 100%;
-      flex: 1;
-    }
-    
-    section {
-      padding: 2rem;
-      margin: 2.5rem auto;
-      background-color: rgba(30, 30, 30, 0.8);
-      border-radius: 1rem;
-      box-shadow: 0 0 25px rgba(0, 255, 255, 0.08);
-      border: 1px solid rgba(0, 255, 255, 0.1);
-      transition: all 0.3s ease;
-      backdrop-filter: blur(5px);
-    }
-    
-    section:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 30px rgba(0, 255, 255, 0.15);
-    }
-    
-    h2 {
-      color: var(--primary);
-      margin: 0 0 1.5rem 0;
-      font-size: 1.8rem;
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-    }
-    
-    h3 {
-      color: var(--primary);
-      margin: 1.5rem 0 1rem 0;
-      font-size: 1.4rem;
-    }
-    
-    iframe {
-      width: 100%;
-      height: 500px;
-      border: none;
-      border-radius: 0.8rem;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-      margin-bottom: 1.5rem;
-    }
-    
-    ul, ol {
-      padding-right: 1.5rem;
-      margin: 1rem 0;
-    }
-    
-    li {
-      margin-bottom: 0.7rem;
-      position: relative;
-    }
-    
-    ul li::before {
-      content: "•";
-      color: var(--primary);
-      position: absolute;
-      right: -1.2rem;
-      font-weight: bold;
-    }
-    
-    .warning {
-      background-color: rgba(255, 166, 0, 0.1);
-      border-right: 4px solid var(--warning);
-      padding: 1.2rem;
-      border-radius: 0 0.5rem 0.5rem 0;
-      margin: 1.5rem 0;
-    }
-    
-    .warning strong {
-      color: var(--warning);
-    }
-    
-    .danger {
-      background-color: rgba(255, 51, 51, 0.1);
-      border-right: 4px solid var(--danger);
-      padding: 1.2rem;
-      border-radius: 0 0.5rem 0.5rem 0;
-      margin: 1.5rem 0;
-    }
-    
-    .danger strong {
-      color: var(--danger);
-    }
-    
-    footer {
-      background-color: var(--darker);
-      text-align: center;
-      padding: 2.5rem 1rem;
-      color: var(--gray);
-      margin-top: 3rem;
-    }
-    
-    footer a {
-      color: var(--primary);
-      text-decoration: none;
-      transition: all 0.3s ease;
-      font-weight: 500;
-    }
-    
-    footer a:hover {
-      text-decoration: underline;
-      color: var(--light);
-    }
-    
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 1.2rem;
-      margin: 1.5rem 0;
-    }
-    
-    .social-links a {
-      color: var(--light);
-      background: rgba(255,255,255,0.1);
-      width: 3rem;
-      height: 3rem;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
-      font-size: 1.2rem;
-    }
-    
-    .social-links a:hover {
-      background: var(--primary);
-      color: #000;
-      transform: translateY(-3px) scale(1.1);
-      box-shadow: 0 4px 10px rgba(0, 255, 255, 0.3);
-    }
-    
-    .tool-box {
-      margin-top: 1.5rem;
-      animation: fadeIn 0.5s ease;
-    }
-    
-    .course-card {
-      background: rgba(50, 50, 50, 0.5);
-      border-radius: 0.8rem;
-      padding: 1.5rem;
-      margin-bottom: 1.2rem;
-      border-left: 4px solid var(--primary);
-      transition: all 0.3s ease;
-    }
-    
-    .course-card:hover {
-      transform: translateX(-5px);
-      background: rgba(50, 50, 50, 0.8);
-    }
-    
-    .course-card h3 {
-      margin-top: 0;
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-    }
-    
-    .btn {
-      display: inline-block;
-      background-color: var(--primary);
-      color: #000;
-      padding: 0.8rem 1.5rem;
-      border-radius: 2rem;
-      text-decoration: none;
-      font-weight: 700;
-      margin-top: 1rem;
-      transition: all 0.3s ease;
-      border: none;
-      cursor: pointer;
-      font-family: inherit;
-      font-size: 1rem;
-    }
-    
-    .btn:hover {
-      background-color: var(--primary-dark);
-      color: var(--light);
-      transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(0, 255, 255, 0.3);
-    }
-    
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(1rem); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    
-    @media (max-width: 768px) {
-      header {
-        padding: 3rem 1rem;
-        clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
-      }
-      
-      section {
-        padding: 1.5rem;
-        margin: 2rem 0.5rem;
-      }
-      
-      iframe {
-        height: 350px;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      header {
-        padding: 2.5rem 1rem;
-      }
-      
-      nav button {
-        padding: 0.6rem 1rem;
-        font-size: 0.9rem;
-      }
-      
-      .social-links a {
-        width: 2.5rem;
-        height: 2.5rem;
-        font-size: 1rem;
-      }
-    }
-  </style>
+    <!-- Tajawal Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-QC4X8624Q7"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-QC4X8624Q7');
-</script>
 <body>
-
-  <header>
-    <h1>CyberCraft</h1>
-    <p>المنصة التونسية الرائدة في التوعية بالأمن السيبراني وتدريب الاختراق الأخلاقي</p>
-  </header>
-
-  <nav>
-    <button onclick="showTool('cloner')" class="active">🧪 استنساخ الصفحات</button>
-    <button onclick="showTool('harvester')">🔑 جمع البيانات</button>
-    <button onclick="showTool('wifi')">📶 أمن الشبكات</button>
-    <button onclick="showTool('spoof')">🌀 التزوير الرقمي</button>
-    <button onclick="showTool('kali')">💻 أدوات الحماية</button>
-    <button onclick="showTool('disclaimer')">⚠️ إخلاء مسؤولية</button>
-  </nav>
-
-  <main>
-    <section id="about">
-      <h2>🏆 من نحن</h2>
-      <p>
-        CyberCraft هي مبادرة تونسية تأسست عام 2023 بهدف رفع الوعي بالأمن السيبراني وتأهيل الكفاءات في مجال الحماية الرقمية. نقدم محتوى تعليمياً عملياً في بيئة آمنة ومحكمة، مع التركيز على الجانب التطبيقي والأخلاقي.
-      </p>
-      
-      <div class="warning">
-        <strong>تنويه هام:</strong> جميع المحتويات والأدوات المقدمة هنا هي لأغراض تعليمية وتوعوية فقط ضمن بيئة افتراضية مغلقة. أي استخدام خارج هذا الإطار يعتبر انتهاكاً للقوانين المحلية والدولية.
-      </div>
-    </section>
-
-    <section id="video">
-      <h2>🎬 آخر إصداراتنا</h2>
-      <iframe 
-        src="https://www.youtube.com/embed/ymgPPA_gVLE" 
-        title="فيديو تعليمي عن أمن الشبكات والحماية من الاختراق"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen
-        loading="lazy">
-      </iframe>
-      <p>
-        في هذا الفيديو التعليمي، نستعرض تقنيات حماية الشبكات المنزلية من الاختراق، مع شرح عملي لكيفية اكتشاف نقاط الضعف ومعالجتها.
-      </p>
-      <a href="https://www.youtube.com/@cybercraft00" target="_blank" class="btn">المزيد من الفيديوهات</a>
-    </section>
-
-    <section id="tools">
-      <h2>🛠️ الأدوات التعليمية</h2>
-      <div class="tool-box" id="tool-content">
-        <h3>🧪 أداة استنساخ الصفحات</h3>
-        <p>تستخدم هذه الأداة لإنشاء نسخ من صفحات الويب لأغراض تعليمية تهدف إلى:</p>
-        <ul>
-          <li>شرح كيفية عمل هجمات التصيد الاحتيالي (Phishing)</li>
-          <li>تعليم المستخدمين كيفية التعرف على الصفحات المزيفة</li>
-          <li>اختبار وعي المستخدمين في بيئة آمنة ومراقبة</li>
-          <li>تحليل نقاط الضعف في أنظمة الحماية</li>
-        </ul>
-        <div class="danger">
-          <strong>تحذير قانوني:</strong> استخدام هذه التقنية خارج الإطار التعليمي يعتبر جريمة إلكترونية يعاقب عليها القانون التونسي والدولي.
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">تفريغ<span>دروس</span></a>
+                <ul class="nav-links">
+                    <li><a href="#hero">الرئيسية</a></li>
+                    <li><a href="#services">الخدمات</a></li>
+                    <li><a href="#how-it-works">كيفية العمل</a></li>
+                    <li><a href="#pricing">الأسعار</a></li>
+                    <li><a href="#contact">اتصل بنا</a></li>
+                </ul>
+            </nav>
         </div>
-      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>خدمات تفريغ الدروس والبحوث باحترافية</h1>
+                <p>تحويل كتاباتك اليدوية إلى ملفات Word وPDF منظمة وجاهزة للطباعة والمراجعة بجودة عالية وسرعة فائقة</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn">اطلب الخدمة الآن</a>
+                    <a href="#how-it-works" class="btn btn-outline">كيف نعمل؟</a>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section id="courses">
-      <h2>📚 دوراتنا التعليمية</h2>
-      
-      <div class="course-card">
-        <h3>🔒 أساسيات الأمن السيبراني</h3>
-        <p>دورة تمهيدية تغطي المفاهيم الأساسية للأمن الرقمي وتقنيات الحماية الأولية.</p>
-        <button class="btn">التفاصيل</button>
-      </div>
-      
-      <div class="course-card">
-        <h3>🛡️ اختبار الاختراق الأخلاقي</h3>
-        <p>تعلم كيفية اكتشاف الثغرات الأمنية في الأنظمة بشكل قانوني وأخلاقي.</p>
-        <button class="btn">التفاصيل</button>
-      </div>
-      
-      <div class="course-card">
-        <h3>📱 أمن الهواتف الذكية</h3>
-        <p>حماية بياناتك الشخصية وتطبيقاتك من الاختراق والتجسس.</p>
-        <button class="btn">التفاصيل</button>
-      </div>
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>خدماتنا</h2>
+                <p>نقدم مجموعة متكاملة من خدمات التفريغ والكتابة لطلبة المدارس والجامعات</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>تفريغ الدروس والمحاضرات</h3>
+                    <p>تحويل الملاحظات والمحاضرات المكتوبة بخط اليد إلى ملفات رقمية منظمة مع الحفاظ على الهيكل الأصلي</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>كتابة البحوث والتقارير</h3>
+                    <p>إعداد البحوث والتقارير الأكاديمية باحترافية مع الالتزام بمعايير الكتابة الأكاديمية</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-pen-fancy"></i>
+                    </div>
+                    <h3>تلخيص المحتوى الدراسي</h3>
+                    <p>إعداد ملخصات دراسية واضحة ومنظمة تسهل عملية المراجعة والتحضير للامتحانات</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-file-word"></i>
+                    </div>
+                    <h3>تنسيق ملفات Word</h3>
+                    <p>تنسيق الملفات النصية بشكل احترافي مع العناوين والفقرات والجداول والرسومات</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3>تحويل إلى PDF</h3>
+                    <p>تحويل الملفات إلى صيغة PDF مع الحفاظ على التنسيق وجودة العرض</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>مراجعة وتدقيق</h3>
+                    <p>مراجعة الملفات النصية وتصحيح الأخطاء الإملائية والنحوية</p>
+                </div>
+            </div>
+        </div>
     </section>
 
+    <!-- How It Works Section -->
+    <section id="how-it-works">
+        <div class="container">
+            <div class="section-title">
+                <h2>كيفية العمل</h2>
+                <p>خطوات بسيطة للحصول على ملفاتك المنظمة والمهيأة للطباعة</p>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>إرسال الملفات</h3>
+                    <p>قم بإرسال صور واضحة للوثائق المطلوبة عبر الواتساب أو البريد الإلكتروني</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>معالجة المحتوى</h3>
+                    <p>نقوم بكتابة المحتوى وتنسيقه بشكل احترافي وفقاً لمتطلباتك</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>استلام الملفات</h3>
+                    <p>تصلك الملفات النهائية على بريدك الإلكتروني أو عبر الواتساب خلال الوقت المتفق عليه</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing">
+        <div class="container">
+            <div class="section-title">
+                <h2>باقات الأسعار</h2>
+                <p>أسعار تنافسية مع خصومات خاصة للطلبات الكبيرة والمشاريع المتكاملة</p>
+            </div>
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <h3>الباقة الأساسية</h3>
+                    <div class="price">3 د.ت <span>للصفحة</span></div>
+                    <ul class="pricing-features">
+                        <li>تفريغ المحتوى النصي</li>
+                        <li>تنسيق أساسي</li>
+                        <li>مراجعة واحدة</li>
+                        <li>تسليم خلال 48 ساعة</li>
+                    </ul>
+                    <a href="#contact" class="btn">اختر هذه الباقة</a>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="featured-badge">الأكثر طلباً</div>
+                    <h3>الباقة المتكاملة</h3>
+                    <div class="price">5 د.ت <span>للصفحة</span></div>
+                    <ul class="pricing-features">
+                        <li>تفريغ كامل للمحتوى</li>
+                        <li>تنسيق احترافي</li>
+                        <li>إضافة العناوين والجداول</li>
+                        <li>مراجعتين مجاناً</li>
+                        <li>تسليم خلال 24 ساعة</li>
+                    </ul>
+                    <a href="#contact" class="btn">اختر هذه الباقة</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>الباقة المميزة</h3>
+                    <div class="price">7 د.ت <span>للصفحة</span></div>
+                    <ul class="pricing-features">
+                        <li>تفريغ وتنسيق متكامل</li>
+                        <li>إضافة الرسومات والجداول</li>
+                        <li>مراجعات غير محدودة</li>
+                        <li>تسليم فوري (12 ساعة)</li>
+                        <li>ملف PDF مجاني</li>
+                    </ul>
+                    <a href="#contact" class="btn">اختر هذه الباقة</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
     <section id="contact">
-      <h2>📩 تواصل معنا</h2>
-      <p>للاستفسارات أو المشاركة في دوراتنا، يمكنك التواصل معنا عبر:</p>
-      <ul>
-        <li>البريد الإلكتروني: <a href="mailto:contact@cybercraft.tn">contact@cybercraft.tn</a></li>
-        <li>قناتنا على يوتيوب: <a href="https://www.youtube.com/@cybercraft00" target="_blank">CyberCraft</a></li>
-        <li>صفحتنا على فيسبوك: <a href="#" target="_blank">CyberCraft Tunisia</a></li>
-      </ul>
+        <div class="container">
+            <div class="section-title">
+                <h2>اتصل بنا</h2>
+                <p>تواصل معنا الآن لطلب الخدمة أو الاستفسار عن أي تفاصيل</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>معلومات التواصل</h3>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>الهاتف</h3>
+                            <p>+216 12 345 678</p>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>البريد الإلكتروني</h3>
+                            <p>contact@example.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>واتساب</h3>
+                            <p>+216 12 345 678</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">الاسم الكامل</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">البريد الإلكتروني</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">رقم الهاتف</label>
+                            <input type="tel" id="phone" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">نوع الخدمة</label>
+                            <select id="service" class="form-control" required>
+                                <option value="">اختر الخدمة</option>
+                                <option value="typing">تفريغ الدروس</option>
+                                <option value="research">كتابة البحوث</option>
+                                <option value="summary">إعداد الملخصات</option>
+                                <option value="formatting">تنسيق الملفات</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">تفاصيل الطلب</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">إرسال الطلب</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </section>
-  </main>
 
-  <footer>
-    <div>© 2025 CyberCraft - جميع الحقوق محفوظة</div>
-    <div style="margin: 1rem 0;">
-      <a href="privacy.html">سياسة الخصوصية</a> | 
-      <a href="terms.html">شروط الاستخدام</a> | 
-      <a href="disclaimer.html">إخلاء المسؤولية</a>
-    </div>
-    <div class="social-links">
-      <a href="#" aria-label="فيسبوك">📘</a>
-      <a href="#" aria-label="تويتر">🐦</a>
-      <a href="#" aria-label="إنستغرام">📷</a>
-      <a href="https://www.youtube.com/@cybercraft00" aria-label="يوتيوب">▶️</a>
-      <a href="#" aria-label="لينكدإن">💼</a>
-    </div>
-    <div style="margin-top: 1rem; font-size: 0.8rem;">
-      Made with ❤️ in Tunisia
-    </div>
-  </footer>
-
-  <script>
-    // محتوى الأدوات
-    const content = {
-      cloner: `
-        <h3>🧪 أداة استنساخ الصفحات (Website Cloner)</h3>
-        <p>هذه الأداة التعليمية تمكنك من:</p>
-        <ul>
-          <li>إنشاء نسخة طبق الأصل من أي صفحة ويب</li>
-          <li>تحليل بنية صفحات تسجيل الدخول</li>
-          <li>كشف الثغرات في نماذج إدخال البيانات</li>
-          <li>اختبار أنظمة الكشف عن التصيد الاحتيالي</li>
-        </ul>
-        
-        <h3>🎯 الأهداف التعليمية:</h3>
-        <ol>
-          <li>فهم كيفية عمل هجمات التصيد الاحتيالي</li>
-          <li>تعلم كيفية اكتشاف الصفحات المزيفة</li>
-          <li>تحسين أنظمة الحماية ضد هذه الهجمات</li>
-        </ol>
-        
-        <div class="danger">
-          <strong>تحذير:</strong> استخدام هذه الأداة ضد مواقع حقيقية دون إذن مسبق يعتبر جريمة يعاقب عليها القانون.
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <a href="#" class="footer-logo">تفريغ<span>دروس</span></a>
+                    <p>نقدم خدمات تفريغ الدروس والبحوث باحترافية عالية، نساعد الطلاب والأساتذة في تحويل محتواهم اليدوي إلى ملفات رقمية منظمة وجاهزة للطباعة.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="#hero">الرئيسية</a></li>
+                        <li><a href="#services">الخدمات</a></li>
+                        <li><a href="#how-it-works">كيفية العمل</a></li>
+                        <li><a href="#pricing">الأسعار</a></li>
+                        <li><a href="#contact">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>الخدمات</h3>
+                    <ul>
+                        <li><a href="#">تفريغ الدروس</a></li>
+                        <li><a href="#">كتابة البحوث</a></li>
+                        <li><a href="#">تلخيص المحتوى</a></li>
+                        <li><a href="#">تنسيق الملفات</a></li>
+                        <li><a href="#">تحويل إلى PDF</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>جميع الحقوق محفوظة &copy; 2023 تفريغ دروس</p>
+            </div>
         </div>
-      `,
-      harvester: `
-        <h3>🔑 أداة جمع بيانات الدخول (Credential Harvester)</h3>
-        <p>هذه الأداة التعليمية تشرح:</p>
-        <ul>
-          <li>كيفية يتم جمع بيانات المستخدمين عبر الإنترنت</li>
-          <li>تقنيات حماية البيانات الشخصية</li>
-          <li>أنظمة التشفير المستخدمة في حماية كلمات المرور</li>
-        </ul>
-        
-        <h3>🛡️ نصائح للحماية:</h3>
-        <ul>
-          <li>استخدم كلمات مرور قوية وفريدة لكل حساب</li>
-          <li>تفعيل المصادقة الثنائية (2FA)</li>
-          <li>عدم إدخال بياناتك في مواقع غير موثوقة</li>
-          <li>تحديث كلمات المرور بانتظام</li>
-        </ul>
-      `,
-      wifi: `
-        <h3>📶 أمن الشبكات اللاسلكية (Wi-Fi Security)</h3>
-        <p>هذه الأداة تشرح ثغرات شبكات Wi-Fi وكيفية الحماية منها:</p>
-        
-        <h4>أنواع الهجمات:</h4>
-        <ul>
-          <li>هجوم Evil Twin (شبكة مزيفة)</li>
-          <li>هجوم Man-in-the-Middle (اعتراض البيانات)</li>
-          <li>كسر تشفير WPA/WPA2</li>
-          <li>هجوم KRACK ضد بروتوكول WPA3</li>
-        </ul>
-        
-        <h4>إجراءات الحماية:</h4>
-        <ol>
-          <li>استخدام WPA3 مع AES-256</li>
-          <li>تعطيل WPS و UPnP</li>
-          <li>تغيير كلمة مرور الموجه بانتظام</li>
-          <li>استخدام شبكة ضيوف للزوار</li>
-          <li>تفعيل جدار الحماية</li>
-        </ol>
-      `,
-      spoof: `
-        <h3>🌀 تزوير الهوية الرقمية (Spoofing)</h3>
-        <p>هذه الأداة التعليمية تشرح تقنيات التزوير الرقمي وكيفية الحماية منها:</p>
-        
-        <h4>أنواع التزوير:</h4>
-        <ul>
-          <li>تزوير عنوان IP (IP Spoofing)</li>
-          <li>تزوير البريد الإلكتروني (Email Spoofing)</li>
-          <li>تزوير هوية المتصل (Caller ID Spoofing)</li>
-          <li>تزوير موقع GPS</li>
-          <li>تزوير شهادات SSL/TLS</li>
-        </ul>
-        
-        <h4>كيفية الاكتشاف والحماية:</h4>
-        <ul>
-          <li>فحص رأس البريد الإلكتروني (Email Header)</li>
-          <li>استخدام VPN موثوق</li>
-          <li>التحقق من شهادات SSL</li>
-          <li>عدم الثقة في الرسائل غير المتوقعة</li>
-        </ul>
-      `,
-      kali: `
-        <h3>💻 أدوات Kali Linux للحماية</h3>
-        <p>أهم الأدوات التي نستخدمها في التدريبات:</p>
-        
-        <h4>أدوات اختبار الاختراق:</h4>
-        <ul>
-          <li><strong>Metasploit Framework:</strong> منصة اختبار الاختراق الشاملة</li>
-          <li><strong>Nmap:</strong> مسح الشبكات واكتشاف الثغرات</li>
-          <li><strong>Burp Suite:</strong> اختبار أمان تطبيقات الويب</li>
-          <li><strong>Wireshark:</strong> تحليل حركة الشبكة</li>
-        </ul>
-        
-        <h4>أدوات الهندسة الاجتماعية:</h4>
-        <ul>
-          <li><strong>SET (Social Engineering Toolkit):</strong> محاكاة هجمات الهندسة الاجتماعية</li>
-          <li><strong>Gophish:</strong> اختبار وعي الموظفين ضد التصيد الاحتيالي</li>
-        </ul>
-        
-        <div class="warning">
-          جميع هذه الأدوات تستخدم في بيئة معزولة لأغراض تعليمية فقط.
-        </div>
-      `,
-      disclaimer: `
-        <h3>⚠️ إخلاء مسؤولية قانوني</h3>
-        <p>تؤكد CyberCraft على ما يلي:</p>
-        <ol>
-          <li>جميع المحتويات مقدمة لأغراض تعليمية وتوعوية فقط</li>
-          <li>يجب عدم استخدام هذه المعلومات لأي أغراض غير قانونية</li>
-          <li>الاختراق غير المصرح به جريمة يعاقب عليها القانون</li>
-          <li>نحن لا نتحمل أي مسؤولية عن سوء استخدام هذه المعلومات</li>
-        </ol>
-        
-        <h4>القوانين ذات الصلة في تونس:</h4>
-        <ul>
-          <li>قانون الجرائم المعلوماتية التونسي (2019)</li>
-          <li>قانون حماية المعطيات الشخصية (2004)</li>
-          <li>الاتفاقيات الدولية الموقعة من قبل تونس</li>
-        </ul>
-        
-        <div class="danger">
-          <strong>تنويه:</strong> أي نشاط غير مصرح به ضد أنظمة حاسوبية يعرضك للمساءلة القانونية وفقاً للمادة 196 من المجلة الجزائية التونسية.
-        </div>
-      `
-    };
+    </footer>
 
-    // عرض المحتوى عند النقر على الأزرار
-    function showTool(tool) {
-      const toolContent = document.getElementById("tool-content");
-      toolContent.innerHTML = content[tool] || `
-        <div class="warning">
-          <p>هذه الأداة غير متاحة حالياً. يرجى المحاولة لاحقاً.</p>
-        </div>
-      `;
-      
-      // تحديث الأزرار النشطة
-      document.querySelectorAll('nav button').forEach(btn => {
-        btn.classList.remove('active');
-      });
-      event.target.classList.add('active');
-      
-      // التمرير السلس للقسم
-      document.getElementById('tools').scrollIntoView({
-        behavior: 'smooth'
-      });
-    }
+    <!-- Scripts -->
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
 
-    // جعل قسم الأدوات في منتصف الشاشة عند التحميل
-    window.addEventListener('load', () => {
-      document.getElementById('tools').scrollIntoView({
-        behavior: 'auto',
-        block: 'start'
-      });
-      window.scrollBy(0, -100);
-    });
-  </script>
-
+        // Form submission
+        const contactForm = document.querySelector('.contact-form form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form values
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const phone = document.getElementById('phone').value;
+                const service = document.getElementById('service').value;
+                const message = document.getElementById('message').value;
+                
+                // Here you would typically send the data to your server
+                // For demonstration, we'll just show an alert
+                alert('تم استلام طلبك بنجاح! سنتواصل معك قريباً.');
+                
+                // Reset the form
+                contactForm.reset();
+            });
+        }
+    </script>
 </body>
 </html>
