@@ -3,14 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>خدمات تفريغ الدروس والبحوث | تحويل الكتابة اليدوية إلى ملفات رقمية</title>
-    <meta name="description" content="خدمة احترافية لتفريغ الدروس، الفروض والبحوث من الكتابة اليدوية إلى ملفات Word وPDF منظمة وجاهزة للطباعة">
+    <title>Moun9ed.tn - تحويل النصوص اليدوية إلى وثائق رقمية</title>
+    <meta name="description" content="خدمة تونسية لتحويل التمارين, الدروس والبحوث من الكتابة اليدوية إلى ملفات Word وPDF باحترافية">
     
     <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📝</text></svg>">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Adsense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1370852209376013" crossorigin="anonymous"></script>
     
     <style>
         /* Variables CSS */
@@ -21,6 +24,9 @@
             --light: #ecf0f1;
             --dark: #2c3e50;
             --success: #27ae60;
+            --tunisia-red: #e70013;
+            --tunisia-white: #ffffff;
+            --tunisia-blue: #0072bc;
         }
 
         /* Reset & Base Styles */
@@ -44,6 +50,28 @@
             padding: 0 15px;
         }
 
+        /* Language Switcher */
+        .lang-switcher {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 1001;
+        }
+        
+        .lang-btn {
+            background: var(--tunisia-red);
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        
+        .lang-btn.active {
+            background: var(--tunisia-blue);
+        }
+
         /* Header */
         header {
             background-color: white;
@@ -59,6 +87,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 0;
+            position: relative;
         }
 
         .logo {
@@ -69,7 +98,16 @@
         }
 
         .logo span {
-            color: var(--secondary);
+            color: var(--tunisia-red);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary);
+            cursor: pointer;
         }
 
         .nav-links {
@@ -89,7 +127,7 @@
         }
 
         .nav-links a:hover {
-            color: var(--secondary);
+            color: var(--tunisia-red);
         }
 
         /* Hero Section */
@@ -115,7 +153,7 @@
         .btn {
             display: inline-block;
             padding: 12px 30px;
-            background-color: var(--secondary);
+            background-color: var(--tunisia-red);
             color: white;
             border: none;
             border-radius: 4px;
@@ -127,22 +165,31 @@
         }
 
         .btn:hover {
-            background-color: #2980b9;
+            background-color: #c5000f;
             transform: translateY(-2px);
         }
 
         .btn-outline {
             background: transparent;
-            border: 2px solid var(--secondary);
-            color: var(--secondary);
+            border: 2px solid var(--tunisia-red);
+            color: var(--tunisia-red);
             margin-right: 15px;
         }
 
         .btn-outline:hover {
-            background: var(--secondary);
+            background: var(--tunisia-red);
             color: white;
         }
 
+        /* Ads Section */
+        .ads-container {
+            margin: 30px auto;
+            text-align: center;
+            padding: 15px;
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+        
         /* Services Section */
         #services {
             padding: 80px 0;
@@ -167,7 +214,7 @@
             position: absolute;
             width: 50px;
             height: 3px;
-            background-color: var(--secondary);
+            background-color: var(--tunisia-red);
             bottom: -10px;
             left: 50%;
             transform: translateX(-50%);
@@ -200,7 +247,7 @@
 
         .service-icon {
             font-size: 2.5rem;
-            color: var(--secondary);
+            color: var(--tunisia-red);
             margin-bottom: 20px;
         }
 
@@ -233,7 +280,7 @@
         .step-number {
             width: 50px;
             height: 50px;
-            background-color: var(--secondary);
+            background-color: var(--tunisia-red);
             color: white;
             border-radius: 50%;
             display: flex;
@@ -279,7 +326,7 @@
         }
 
         .pricing-card.featured {
-            border: 2px solid var(--secondary);
+            border: 2px solid var(--tunisia-red);
             position: relative;
         }
 
@@ -287,7 +334,7 @@
             position: absolute;
             top: -15px;
             right: 20px;
-            background-color: var(--secondary);
+            background-color: var(--tunisia-red);
             color: white;
             padding: 5px 15px;
             border-radius: 20px;
@@ -344,7 +391,7 @@
 
         .contact-icon {
             font-size: 1.2rem;
-            color: var(--secondary);
+            color: var(--tunisia-red);
             margin-left: 15px;
             margin-top: 5px;
         }
@@ -384,12 +431,23 @@
 
         .form-control:focus {
             outline: none;
-            border-color: var(--secondary);
+            border-color: var(--tunisia-red);
         }
 
         textarea.form-control {
             min-height: 150px;
             resize: vertical;
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            background-color: var(--success);
+            color: white;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 20px;
+            text-align: center;
         }
 
         /* Footer */
@@ -415,7 +473,7 @@
         }
 
         .footer-logo span {
-            color: var(--secondary);
+            color: var(--tunisia-red);
         }
 
         .footer-about p {
@@ -435,7 +493,7 @@
             position: absolute;
             width: 40px;
             height: 2px;
-            background-color: var(--secondary);
+            background-color: var(--tunisia-red);
             bottom: 0;
             right: 0;
         }
@@ -455,7 +513,7 @@
         }
 
         .footer-links a:hover {
-            color: var(--secondary);
+            color: var(--tunisia-red);
         }
 
         .social-links {
@@ -477,7 +535,7 @@
         }
 
         .social-links a:hover {
-            background-color: var(--secondary);
+            background-color: var(--tunisia-red);
             transform: translateY(-3px);
         }
 
@@ -502,16 +560,30 @@
         }
 
         @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
+            .menu-toggle {
+                display: block;
             }
             
             .nav-links {
-                margin-top: 20px;
+                position: fixed;
+                top: 80px;
+                right: -100%;
+                width: 80%;
+                height: calc(100vh - 80px);
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                transition: right 0.3s;
+                box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+            }
+            
+            .nav-links.active {
+                right: 0;
             }
             
             .nav-links li {
-                margin: 0 10px;
+                margin: 15px 0;
             }
             
             .hero-content h1 {
@@ -522,18 +594,14 @@
                 flex-direction: column;
                 align-items: center;
             }
+            
+            .lang-switcher {
+                top: 25px;
+                left: 15px;
+            }
         }
 
         @media (max-width: 576px) {
-            .nav-links {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .nav-links li {
-                margin: 10px 0;
-            }
-            
             .hero-content h1 {
                 font-size: 1.8rem;
             }
@@ -554,11 +622,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Language Switcher -->
+    <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="ar">العربية</button>
+        <button class="lang-btn" data-lang="fr">Français</button>
+    </div>
+
     <!-- Header -->
     <header>
         <div class="container">
             <nav class="navbar">
-                <a href="#" class="logo">تفريغ<span>دروس</span></a>
+                <a href="#" class="logo">Moun9ed<span>.tn</span></a>
+                <button class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
                 <ul class="nav-links">
                     <li><a href="#hero">الرئيسية</a></li>
                     <li><a href="#services">الخدمات</a></li>
@@ -574,8 +651,8 @@
     <section id="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>خدمات تفريغ الدروس والبحوث باحترافية</h1>
-                <p>تحويل كتاباتك اليدوية إلى ملفات Word وPDF منظمة وجاهزة للطباعة والمراجعة بجودة عالية وسرعة فائقة</p>
+                <h1>Moun9ed.tn - الحل الأمثل لتحويل كتاباتك اليدوية</h1>
+                <p>خدمة تونسية متخصصة في تحويل التمارين, الدروس والبحوث من الكتابة اليدوية إلى ملفات Word وPDF باحترافية وسرعة فائقة</p>
                 <div class="hero-buttons">
                     <a href="#contact" class="btn">اطلب الخدمة الآن</a>
                     <a href="#how-it-works" class="btn btn-outline">كيف نعمل؟</a>
@@ -584,55 +661,71 @@
         </div>
     </section>
 
+    <!-- Ads Section -->
+    <div class="container">
+        <div class="ads-container">
+            <!-- AdSense Placeholder -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-1370852209376013"
+                 data-ad-slot="1234567890"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+
     <!-- Services Section -->
     <section id="services">
         <div class="container">
             <div class="section-title">
                 <h2>خدماتنا</h2>
-                <p>نقدم مجموعة متكاملة من خدمات التفريغ والكتابة لطلبة المدارس والجامعات</p>
+                <p>نقدم حلولاً رقمية للطلاب والأساتذة لتسهيل العملية التعليمية</p>
             </div>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-book"></i>
                     </div>
-                    <h3>تفريغ الدروس والمحاضرات</h3>
-                    <p>تحويل الملاحظات والمحاضرات المكتوبة بخط اليد إلى ملفات رقمية منظمة مع الحفاظ على الهيكل الأصلي</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-file-alt"></i>
-                    </div>
-                    <h3>كتابة البحوث والتقارير</h3>
-                    <p>إعداد البحوث والتقارير الأكاديمية باحترافية مع الالتزام بمعايير الكتابة الأكاديمية</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-pen-fancy"></i>
-                    </div>
-                    <h3>تلخيص المحتوى الدراسي</h3>
-                    <p>إعداد ملخصات دراسية واضحة ومنظمة تسهل عملية المراجعة والتحضير للامتحانات</p>
+                    <h3>تفريغ الدروس والتمارين</h3>
+                    <p>تحويل التمارين المدرسية والجامعية من الصور أو الكتابة اليدوية إلى ملفات Word منظمة وجاهزة للتسليم</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-file-word"></i>
                     </div>
                     <h3>تنسيق ملفات Word</h3>
-                    <p>تنسيق الملفات النصية بشكل احترافي مع العناوين والفقرات والجداول والرسومات</p>
+                    <p>تنسيق المحتوى الدراسي بشكل احترافي مع العناوين والجداول والرسومات وفقاً لمتطلبات المؤسسات التعليمية</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-file-pdf"></i>
                     </div>
                     <h3>تحويل إلى PDF</h3>
-                    <p>تحويل الملفات إلى صيغة PDF مع الحفاظ على التنسيق وجودة العرض</p>
+                    <p>تحويل الملفات إلى صيغة PDF مع الحفاظ على التنسيق وجودة العرض لتكون جاهزة للطباعة أو الإرسال</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-graduation-cap"></i>
                     </div>
-                    <h3>مراجعة وتدقيق</h3>
-                    <p>مراجعة الملفات النصية وتصحيح الأخطاء الإملائية والنحوية</p>
+                    <h3>إنجاز البحوث الجامعية</h3>
+                    <p>مساعدة الطلاب في إنجاز بحوث التخرج والمشاريع الجامعية مع الالتزام بالمعايير الأكاديمية</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-check-double"></i>
+                    </div>
+                    <h3>تصحيح الأخطاء</h3>
+                    <p>مراجعة وتصحيح الأخطاء الإملائية والنحوية في الوثائق والمستندات التعليمية</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-stopwatch"></i>
+                    </div>
+                    <h3>خدمة عاجلة</h3>
+                    <p>تفريغ وتنسيق الملفات في وقت قياسي للطلبات المستعجلة قبل المواعيد النهائية للتسليم</p>
                 </div>
             </div>
         </div>
@@ -643,23 +736,23 @@
         <div class="container">
             <div class="section-title">
                 <h2>كيفية العمل</h2>
-                <p>خطوات بسيطة للحصول على ملفاتك المنظمة والمهيأة للطباعة</p>
+                <p>3 خطوات بسيطة للحصول على وثائقك الرقمية</p>
             </div>
             <div class="steps">
                 <div class="step">
                     <div class="step-number">1</div>
                     <h3>إرسال الملفات</h3>
-                    <p>قم بإرسال صور واضحة للوثائق المطلوبة عبر الواتساب أو البريد الإلكتروني</p>
+                    <p>قم بإرسال صور واضحة للتمارين أو الدروس عبر الواتساب أو البريد الإلكتروني</p>
                 </div>
                 <div class="step">
                     <div class="step-number">2</div>
-                    <h3>معالجة المحتوى</h3>
-                    <p>نقوم بكتابة المحتوى وتنسيقه بشكل احترافي وفقاً لمتطلباتك</p>
+                    <h3>الدفع والتأكيد</h3>
+                    <p>اختر الباقة المناسبة وقم بالدفع عبر التحويل البنكي أو بطاقة الائتمان</p>
                 </div>
                 <div class="step">
                     <div class="step-number">3</div>
                     <h3>استلام الملفات</h3>
-                    <p>تصلك الملفات النهائية على بريدك الإلكتروني أو عبر الواتساب خلال الوقت المتفق عليه</p>
+                    <p>تصلك الملفات النهائية على بريدك الإلكتروني في الوقت المتفق عليه</p>
                 </div>
             </div>
         </div>
@@ -670,7 +763,7 @@
         <div class="container">
             <div class="section-title">
                 <h2>باقات الأسعار</h2>
-                <p>أسعار تنافسية مع خصومات خاصة للطلبات الكبيرة والمشاريع المتكاملة</p>
+                <p>أسعار تنافسية تناسب جميع الطلاب مع خصومات للكميات الكبيرة</p>
             </div>
             <div class="pricing-cards">
                 <div class="pricing-card">
@@ -679,8 +772,8 @@
                     <ul class="pricing-features">
                         <li>تفريغ المحتوى النصي</li>
                         <li>تنسيق أساسي</li>
-                        <li>مراجعة واحدة</li>
                         <li>تسليم خلال 48 ساعة</li>
+                        <li>مراجعة واحدة</li>
                     </ul>
                     <a href="#contact" class="btn">اختر هذه الباقة</a>
                 </div>
@@ -691,9 +784,9 @@
                     <ul class="pricing-features">
                         <li>تفريغ كامل للمحتوى</li>
                         <li>تنسيق احترافي</li>
-                        <li>إضافة العناوين والجداول</li>
-                        <li>مراجعتين مجاناً</li>
+                        <li>إضافة الجداول والرسومات</li>
                         <li>تسليم خلال 24 ساعة</li>
+                        <li>مراجعتين مجاناً</li>
                     </ul>
                     <a href="#contact" class="btn">اختر هذه الباقة</a>
                 </div>
@@ -702,9 +795,9 @@
                     <div class="price">7 د.ت <span>للصفحة</span></div>
                     <ul class="pricing-features">
                         <li>تفريغ وتنسيق متكامل</li>
-                        <li>إضافة الرسومات والجداول</li>
-                        <li>مراجعات غير محدودة</li>
+                        <li>إضافة المعادلات الرياضية</li>
                         <li>تسليم فوري (12 ساعة)</li>
+                        <li>مراجعات غير محدودة</li>
                         <li>ملف PDF مجاني</li>
                     </ul>
                     <a href="#contact" class="btn">اختر هذه الباقة</a>
@@ -712,6 +805,22 @@
             </div>
         </div>
     </section>
+
+    <!-- Ads Section -->
+    <div class="container">
+        <div class="ads-container">
+            <!-- AdSense Placeholder -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-1370852209376013"
+                 data-ad-slot="0987654321"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
 
     <!-- Contact Section -->
     <section id="contact">
@@ -729,7 +838,7 @@
                         </div>
                         <div class="contact-text">
                             <h3>الهاتف</h3>
-                            <p>+216 12 345 678</p>
+                            <p>+216 96 969 641</p>
                         </div>
                     </div>
                     <div class="contact-card">
@@ -738,7 +847,7 @@
                         </div>
                         <div class="contact-text">
                             <h3>البريد الإلكتروني</h3>
-                            <p>contact@example.com</p>
+                            <p>tal5isdoc@gmail.com</p>
                         </div>
                     </div>
                     <div class="contact-card">
@@ -747,7 +856,7 @@
                         </div>
                         <div class="contact-text">
                             <h3>واتساب</h3>
-                            <p>+216 12 345 678</p>
+                            <p>+216 96 969 641</p>
                         </div>
                     </div>
                     <div class="social-links">
@@ -757,34 +866,44 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form>
+                    <form id="contactForm" action="https://formsubmit.co/tal5isdoc@gmail.com" method="POST">
+                        <!-- حقول إضافية لتحسين الخدمة -->
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
+                        <input type="text" name="_honey" style="display:none"> <!-- ضد السبام -->
+                        
+                        <!-- حقول المستخدم -->
                         <div class="form-group">
                             <label for="name">الاسم الكامل</label>
-                            <input type="text" id="name" class="form-control" required>
+                            <input type="text" id="name" name="name" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label for="email">البريد الإلكتروني</label>
-                            <input type="email" id="email" class="form-control" required>
+                            <input type="email" id="email" name="email" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label for="phone">رقم الهاتف</label>
-                            <input type="tel" id="phone" class="form-control" required>
+                            <input type="tel" id="phone" name="phone" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label for="service">نوع الخدمة</label>
-                            <select id="service" class="form-control" required>
+                            <select id="service" name="service" class="form-control" required>
                                 <option value="">اختر الخدمة</option>
-                                <option value="typing">تفريغ الدروس</option>
-                                <option value="research">كتابة البحوث</option>
-                                <option value="summary">إعداد الملخصات</option>
-                                <option value="formatting">تنسيق الملفات</option>
+                                <option value="تفريغ التمارين">تفريغ التمارين</option>
+                                <option value="إنجاز البحوث">إنجاز البحوث</option>
+                                <option value="تنسيق الملفات">تنسيق الملفات</option>
+                                <option value="تحويل إلى PDF">تحويل إلى PDF</option>
+                                <option value="خدمة عاجلة">خدمة عاجلة</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label for="message">تفاصيل الطلب</label>
-                            <textarea id="message" class="form-control" required></textarea>
+                            <textarea id="message" name="message" class="form-control" required></textarea>
                         </div>
                         <button type="submit" class="btn">إرسال الطلب</button>
+                        <div id="successMessage" class="success-message">
+                            شكراً لتواصلك معنا! تم إرسال طلبك بنجاح وسنتواصل معك قريباً.
+                        </div>
                     </form>
                 </div>
             </div>
@@ -796,8 +915,14 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-about">
-                    <a href="#" class="footer-logo">تفريغ<span>دروس</span></a>
-                    <p>نقدم خدمات تفريغ الدروس والبحوث باحترافية عالية، نساعد الطلاب والأساتذة في تحويل محتواهم اليدوي إلى ملفات رقمية منظمة وجاهزة للطباعة.</p>
+                    <a href="#" class="footer-logo">Moun9ed<span>.tn</span></a>
+                    <p>منصة تونسية متخصصة في تحويل المحتوى اليدوي إلى وثائق رقمية، نساعد الطلاب والأساتذة في إنجاز أعمالهم باحترافية وسرعة.</p>
+                    <p>تابعنا على وسائل التواصل الاجتماعي:</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
                 </div>
                 <div class="footer-links">
                     <h3>روابط سريعة</h3>
@@ -812,22 +937,40 @@
                 <div class="footer-links">
                     <h3>الخدمات</h3>
                     <ul>
-                        <li><a href="#">تفريغ الدروس</a></li>
-                        <li><a href="#">كتابة البحوث</a></li>
-                        <li><a href="#">تلخيص المحتوى</a></li>
+                        <li><a href="#">تفريغ التمارين</a></li>
                         <li><a href="#">تنسيق الملفات</a></li>
                         <li><a href="#">تحويل إلى PDF</a></li>
+                        <li><a href="#">إنجاز البحوث</a></li>
+                        <li><a href="#">خدمة عاجلة</a></li>
                     </ul>
                 </div>
             </div>
             <div class="copyright">
-                <p>جميع الحقوق محفوظة &copy; 2023 تفريغ دروس</p>
+                <p>جميع الحقوق محفوظة &copy; <span id="year"></span> Moun9ed.tn</p>
             </div>
         </div>
     </footer>
 
     <!-- Scripts -->
     <script>
+        // Current Year for Copyright
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // Mobile Menu Toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -839,27 +982,44 @@
             });
         });
 
-        // Form submission
-        const contactForm = document.querySelector('.contact-form form');
+        // Form submission handling
+        const contactForm = document.getElementById('contactForm');
         if (contactForm) {
             contactForm.addEventListener('submit', function(e) {
                 e.preventDefault();
                 
-                // Get form values
-                const name = document.getElementById('name').value;
-                const email = document.getElementById('email').value;
-                const phone = document.getElementById('phone').value;
-                const service = document.getElementById('service').value;
-                const message = document.getElementById('message').value;
+                // Show success message
+                document.getElementById('successMessage').style.display = 'block';
                 
-                // Here you would typically send the data to your server
-                // For demonstration, we'll just show an alert
-                alert('تم استلام طلبك بنجاح! سنتواصل معك قريباً.');
+                // Scroll to success message
+                document.getElementById('successMessage').scrollIntoView({
+                    behavior: 'smooth'
+                });
                 
-                // Reset the form
-                contactForm.reset();
+                // Reset the form after 3 seconds
+                setTimeout(() => {
+                    contactForm.reset();
+                }, 3000);
+                
+                // Submit the form (will redirect to thank you page)
+                this.submit();
             });
         }
+        
+        // Language Switcher (Basic Implementation)
+        const langBtns = document.querySelectorAll('.lang-btn');
+        
+        langBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                langBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // In a real implementation, you would load translations here
+                if(btn.dataset.lang === 'fr') {
+                    alert('سيتم تحويل الموقع إلى اللغة الفرنسية في النسخة الكاملة');
+                }
+            });
+        });
     </script>
 </body>
 </html>
