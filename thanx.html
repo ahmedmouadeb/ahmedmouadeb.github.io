@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شكراً لك - Moun9ed.tn</title>
+    <meta http-equiv="refresh" content="7;url=index.html">
+    <style>
+        /* CSS Variables */
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #27ae60;
+            --tunisia-red: #e70013;
+            --tunisia-white: #ffffff;
+            --tunisia-blue: #0072bc;
+        }
+
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            color: var(--dark);
+            line-height: 1.8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .thank-you-container {
+            max-width: 600px;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .checkmark {
+            color: var(--success);
+            font-size: 5rem;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 2rem;
+        }
+
+        p {
+            color: #555;
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+
+        .contact-info {
+            background: #f5f7fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .contact-info p {
+            margin-bottom: 5px;
+        }
+
+        .countdown {
+            color: var(--tunisia-red);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--tunisia-red);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            background-color: #c5000f;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .thank-you-container {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+    <!-- Tajawal Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="thank-you-container">
+        <div class="checkmark">
+            <i class="fas fa-check-circle"></i>
+        </div>
+        <h1>تم استلام طلبك بنجاح!</h1>
+        <p>شكراً لثقتك في خدمات Moun9ed.tn. لقد تلقينا طلبك وسنتواصل معك في غضون <strong>24 ساعة</strong> كحد أقصى.</p>
+        
+        <div class="contact-info">
+            <p>للاستفسار العاجل، يمكنك التواصل معنا عبر:</p>
+            <p><i class="fas fa-phone"></i> +216 96 969 641</p>
+            <p><i class="fab fa-whatsapp"></i> واتساب: نفس الرقم</p>
+        </div>
+        
+        <p>سيتم تحويلك تلقائياً إلى الصفحة الرئيسية خلال <span id="countdown" class="countdown">7</span> ثوانٍ...</p>
+        <a href="index.html" class="btn">العودة الآن</a>
+    </div>
+
+    <script>
+        // Countdown Timer
+        let seconds = 7;
+        const countdownElement = document.getElementById('countdown');
+        
+        const countdown = setInterval(() => {
+            seconds--;
+            countdownElement.textContent = seconds;
+            
+            if (seconds <= 0) {
+                clearInterval(countdown);
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
