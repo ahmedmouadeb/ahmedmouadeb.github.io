@@ -6,6 +6,7 @@
     <title>شكراً لك - Moun9ed.tn</title>
     <meta http-equiv="refresh" content="7;url=index.html">
     <style>
+        /* CSS Variables */
         :root {
             --primary: #2c3e50;
             --secondary: #3498db;
@@ -18,6 +19,7 @@
             --tunisia-blue: #0072bc;
         }
 
+        /* Reset & Base Styles */
         * {
             margin: 0;
             padding: 0;
@@ -100,6 +102,61 @@
             transform: translateY(-2px);
         }
 
+        .order-details {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            text-align: right;
+            border-right: 3px solid var(--tunisia-red);
+        }
+
+        .order-details h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .order-details p {
+            margin-bottom: 5px;
+            font-size: 1rem;
+        }
+
+        .social-share {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .share-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .share-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 15px;
+            border-radius: 4px;
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .share-btn i {
+            margin-left: 5px;
+        }
+
+        .whatsapp {
+            background-color: #25D366;
+        }
+
+        .facebook {
+            background-color: #3b5998;
+        }
+
         @media (max-width: 768px) {
             .thank-you-container {
                 padding: 30px 20px;
@@ -108,9 +165,15 @@
             h1 {
                 font-size: 1.5rem;
             }
+            
+            .share-buttons {
+                flex-direction: column;
+            }
         }
     </style>
+    <!-- Tajawal Font -->
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -121,10 +184,24 @@
         <h1>تم استلام طلبك بنجاح!</h1>
         <p>شكراً لثقتك في خدمات Moun9ed.tn. لقد تلقينا طلبك وسنتواصل معك في غضون <strong>24 ساعة</strong> كحد أقصى.</p>
         
+        <!-- Order Details will be inserted here by JavaScript -->
+        
         <div class="contact-info">
             <p>للاستفسار العاجل، يمكنك التواصل معنا عبر:</p>
             <p><i class="fas fa-phone"></i> +216 96 969 641</p>
             <p><i class="fab fa-whatsapp"></i> واتساب: نفس الرقم</p>
+        </div>
+        
+        <div class="social-share">
+            <p>شارك خدمتنا مع أصدقائك:</p>
+            <div class="share-buttons">
+                <a href="https://wa.me/?text=جربت%20خدمة%20Moun9ed.tn%20لتحويل%20الكتابة%20اليدوية%20إلى%20ملفات%20رقمية%20باحترافية" class="share-btn whatsapp">
+                    <i class="fab fa-whatsapp"></i> واتساب
+                </a>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https://ahmedmouadeb.github.io" class="share-btn facebook">
+                    <i class="fab fa-facebook-f"></i> فيسبوك
+                </a>
+            </div>
         </div>
         
         <p>سيتم تحويلك تلقائياً إلى الصفحة الرئيسية خلال <span id="countdown" class="countdown">7</span> ثوانٍ...</p>
@@ -132,17 +209,60 @@
     </div>
 
     <script>
-        let seconds = 7;
-        const countdownElement = document.getElementById('countdown');
-        
-        const countdown = setInterval(() => {
-            seconds--;
-            countdownElement.textContent = seconds;
+        // عرض بيانات الطلب من URL
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
             
-            if (seconds <= 0) {
-                clearInterval(countdown);
+            if(urlParams.has('name')) {
+                const orderDetails = document.createElement('div');
+                orderDetails.className = 'order-details';
+                orderDetails.innerHTML = `
+                    <h3>تفاصيل طلبك</h3>
+                    <p><strong>الاسم:</strong> ${urlParams.get('name') || 'غير محدد'}</p>
+                    <p><strong>البريد الإلكتروني:</strong> ${urlParams.get('email') || 'غير محدد'}</p>
+                    <p><strong>الخدمة:</strong> ${urlParams.get('service') || 'غير محددة'}</p>
+                    <p><strong>رقم الطلب:</strong> MN-${Math.floor(100000 + Math.random() * 900000)}</p>
+                    <p><strong>تاريخ الطلب:</strong> ${new Date().toLocaleString('ar-TN')}</p>
+                `;
+                
+                document.querySelector('.thank-you-container').insertBefore(
+                    orderDetails, 
+                    document.querySelector('.contact-info')
+                );
             }
-        }, 1000);
+            
+            // تحسين العد التنازلي
+            let seconds = 7;
+            const countdownElement = document.getElementById('countdown');
+            const returnBtn = document.querySelector('.btn');
+            
+            const countdown = setInterval(() => {
+                seconds--;
+                countdownElement.textContent = seconds;
+                
+                if (seconds <= 0) {
+                    clearInterval(countdown);
+                    returnBtn.textContent = 'جاري التحويل...';
+                    window.location.href = 'index.html';
+                }
+            }, 1000);
+            
+            // إلغاء التحويل التلقائي إذا ضغط المستخدم على الزر
+            returnBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                clearInterval(countdown);
+                window.location.href = 'index.html';
+            });
+            
+            // تتبع تحليلات إذا كان هناك رمز تتبع
+            if(typeof gtag !== 'undefined') {
+                gtag('event', 'conversion', {
+                    'send_to': 'AW-YOUR_CONVERSION_ID/YOUR_LABEL',
+                    'value': 1.0,
+                    'currency': 'TND'
+                });
+            }
+        });
     </script>
 </body>
 </html>
